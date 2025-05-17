@@ -184,7 +184,6 @@ io.on("connection", (socket: Socket) => {
             const roomID = mapOfUsersToRoomID.get(socket.id);
             if (roomID) {
                 io.to(roomID).emit("userDisconnected", "Other user has disconnected");
-                console.log(`[Disconnect] User ${socket.id} left room ${roomID}`);
                 // Clean up the room mappings
                 for (const [userId, userRoomId] of mapOfUsersToRoomID.entries()) {
                     if (userRoomId === roomID) {
