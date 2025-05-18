@@ -2,22 +2,7 @@ import express, { Request, Response, Application } from "express";
 import { createServer, Server as HttpServer } from "http";
 import { Server as SocketIOServer, Socket } from "socket.io";
 import { v4 as uuidv4 } from 'uuid';
-
-interface RTCOfferData {
-    sdp: string;
-    type: 'offer';
-}
-
-interface RTCAnswerData {
-    sdp: string;
-    type: 'answer';
-}
-
-interface RTCIceCandidateData {
-    candidate: string;
-    sdpMLineIndex: number;
-    sdpMid: string;
-}
+import { RTCOfferData , RTCAnswerData , RTCIceCandidateData } from "./types"
 
 const app: Application = express();
 const httpServer: HttpServer = createServer(app);
