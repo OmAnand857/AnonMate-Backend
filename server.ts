@@ -31,7 +31,6 @@ function handleConnection( socket: Socket) : void {
 
             while( queue.length > 0 && users.length < 2 ) {
                 let currUser : Socket = queue.shift()!;
-                // logic to check is user whose Socket we have stored is still active
                 if( currUser.connected ) {
                     users.push(currUser);
                 }
