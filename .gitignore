@@ -131,6 +131,7 @@ dynamodb_local_*.log
 # Compiled TypeScript files
 dist/
 *.js
+!jest.config.js
 *.js.map
 # Add this if you have a different output directory for your compiled TypeScript
 # out/
